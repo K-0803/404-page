@@ -1,11 +1,41 @@
-body{
-    background: -moz-radial-gradient(#ffffff, #000000);
-    background: -webkit-radial-gradient(#ffffff, #000000); 
-    background: radial-gradient(#ffffff, #000000);
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
+.wrapper{
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
 }
+@media screen and (max-width: 479px) {
+  .wrapper{
+    width: auto;
+    padding: 0 10px;
+  }
+}
+
+body{
+  background: -moz-radial-gradient(#ffffff, #000000);
+  background: -webkit-radial-gradient(#ffffff, #000000); 
+  background: radial-gradient(#ffffff, #000000);
+  max-width: 100%;
+  height: auto;
+}
+@media screen and (max-width: 479px) {
+  body{
+    font-size: 10px;
+  }
+}
+
+body::after{
+  content:"";
+  background: #000000;
+  -webkit-transition: opacity .8s ease;  /* アニメーション時間は 0.8秒 */
+  -ms-transition: opacity .8s ease;
+  -moz-transition: opacity .8s ease;
+  transition: opacity .8s ease;
+}
+
 .text{
     font-size: 25px;
     text-align: center;
@@ -14,6 +44,12 @@ body{
     justify-content: center;
     height : 100vh;
 }
+@media screen and (max-width: 479px) {
+  .text{
+    font-size: 10px;
+  }
+}
+
 footer{
     display: flex;
     justify-content: center;
@@ -98,3 +134,4 @@ footer{
       transform: translate(0);
     }
   }
+
